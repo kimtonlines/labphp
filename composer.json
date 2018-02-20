@@ -1,0 +1,15 @@
+{
+    "name": "kimt/application",
+    "authors": [
+        {
+            "name": "Kim-Taing SIMIN",
+            "email": "kimtonlines@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "^3.0",
+        "slim/flash": "^0.4.0",
+        "slim/csrf": "^0.8.2",
+        "twig/twig": "^2.0"
+    }
+}
