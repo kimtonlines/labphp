@@ -6,6 +6,11 @@
             "email": "kimtonlines@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4":{
+            "Controller\\": "src/"
+        }
+    },
     "require": {
         "slim/slim": "^3.0",
         "slim/flash": "^0.4.0",
