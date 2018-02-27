@@ -10,7 +10,6 @@ $config = [
     ],
 ];
 
-
 $app = new App($config);
 
 require('../src/container.php');

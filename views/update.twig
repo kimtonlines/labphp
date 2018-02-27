@@ -1,0 +1,27 @@
+{% extends 'layout.twig' %}
+{% block title %}Gestion::Modifier{% endblock %}
+{% block body %}
+<h1>Modifier Article</h1>
+<div>
+    <form method="post">
+        <div>
+        <input type="hidden" name="id" value="{{ article.id }}">
+        </div>
+        <div>
+        <label for="libelle">Libelle</label>
+        <input type="text" name="libelle" value="{{ article.libelle }}">
+        </div>
+        <div>
+        <label for="qte">Quantité</label>
+        <input type="qte" name="qte" value="{{ article.qte }}">
+        </div>
+        <div>
+            <label for="pu">Prix Unitaire</label>
+            <input type="pu" name="pu" value="{{ article.pu }}">
+        </div>
+        <div>
+            <button type="submit" name="modifier">Modifier</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

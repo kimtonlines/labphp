@@ -1,0 +1,24 @@
+{% extends 'layout.twig' %}
+{% block title %}Gestion::Ajouter{% endblock %}
+{% block body %}
+<h1>Ajouter Article</h1>
+<div>
+    <form method="post">
+        <div>
+        <label for="libelle">Libelle</label>
+        <input type="text" name="libelle">
+        </div>
+        <div>
+        <label for="qte">Quantité</label>
+        <input type="qte" name="qte">
+        </div>
+        <div>
+            <label for="pu">Prix Unitaire</label>
+            <input type="pu" name="pu">
+        </div>
+        <div>
+            <button type="submit" name="ajouter">Ajouter</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

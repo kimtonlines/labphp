@@ -3,10 +3,22 @@
 // Get container
 $container = $app->getContainer();
 
-$dir = dirname(__DIR__);
+$container['twig'] = function ($container) {
+
+    $loader = new Twig_Loader_Filesystem('../views');
+
+    $twig = new Twig_Environment($loader, array(
+    //'cache' => '/path/to/compilation_cache',
+    ));
+
+    return $twig;
+
+};
+
+
 
 // Register component on container
-$container['view'] = function ($container) {
+/*$container['view'] = function ($container) {
     $view = new \Slim\Views\Twig($dir.'/views', [
        // 'cache' => 'path/to/cache'
     ]);
@@ -16,4 +28,4 @@ $container['view'] = function ($container) {
     $view->addExtension(new Slim\Views\TwigExtension($container['router'], $basePath));
 
     return $view;
-};
+};*/
