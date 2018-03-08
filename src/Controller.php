@@ -8,7 +8,7 @@ use Psr\Http\Message\ResponseInterface;
 
 class Controller {
     
-    private $pdopdo;
+    private $pdo;
     private $container;
 
     public function __construct($container) {
@@ -29,7 +29,7 @@ class Controller {
 
     public function create (RequestInterface $request, ResponseInterface $response, $args) {
 
-        if (isset($_POST['ajouter']) && !empty($_POST['libelle'])) {
+        if ($request->isMethod('POST') && !empty($request->getParam('libelle'))) {
 
             $libelle = $request->getParam('libelle');
             $qte =  $request->getParam('qte');
@@ -87,7 +87,7 @@ class Controller {
         $requete->execute();
         $resultat = $requete->fetchAll();
 
-            return $this->container->twig->render('list.twig', array('articles' => $resultat)); 
+            return $this->container->twig->render('list.twig.html', array('articles' => $resultat)); 
 
     }
 

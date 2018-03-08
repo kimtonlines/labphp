@@ -1,0 +1,17 @@
+{% extends 'layout.twig.html' %}
+{% block title %}Gestion::Liste{% endblock %}
+{% block body %}
+<h1>Liste Article</h1>
+<div>
+    <ul>
+        {% for article in articles %}
+            <li><a href="/article/{{ article.id }}">{{ article.libelle }} {{ article.qte }}</a> 
+            <a href="/article/supprimer/{{ article.id }}">Supprimer</a>
+            <a href="/article/modifier/{{ article.id }}">Modifier</a></li>
+        {% endfor %}
+    </ul>
+    <a href="/article/ajouter">Ajouter Article</a>
+    <a href="/article/vider"><button type="submit">Vider</button></a>
+   
+</div>
+{% endblock %}
